@@ -17,8 +17,8 @@ public class MyPolynomial {
 
     public double evaluate(double x) {
         double p = 0;
-        for (double coeff : this.coeffs) {
-            p = coeff + (x * p);
+        for (int i = this.getDegree(); i >= 0; i--) {
+            p += Math.pow(x, i) * coeffs[i];
         }
         return p;
     }
